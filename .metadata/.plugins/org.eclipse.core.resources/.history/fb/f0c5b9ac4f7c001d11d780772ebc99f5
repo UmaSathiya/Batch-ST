@@ -20,8 +20,6 @@ import org.testng.annotations.AfterClass;
 
 @Listeners(listener.Listener.class)
 
-
-
 public class EbayTestclass extends BaseEbayProp
 {
 	Signinpage sign;
