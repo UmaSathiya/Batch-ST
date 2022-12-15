@@ -1,0 +1,28 @@
+package exception;
+
+public class TryCatchFinally
+{
+	public static void main(String[] args)
+	{
+		String a="chennai";
+		String b=null;
+		
+		System.out.println(a);
+		System.out.println(b);
+		
+		try
+		{
+			System.out.println(a.charAt(9));
+		}
+		catch(StringIndexOutOfBoundsException e)
+		{
+			System.out.println("check the String index");
+		}
+		finally 
+		{
+			System.out.println("finally block is running");
+		}
+
+	}
+
+}

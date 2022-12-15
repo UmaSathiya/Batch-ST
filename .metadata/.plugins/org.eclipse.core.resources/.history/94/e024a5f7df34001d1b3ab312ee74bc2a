@@ -1,0 +1,45 @@
+package string;
+
+public class Stringmethods
+{
+
+	public static void main(String[] args) 
+	{
+		//contains() method
+		String a="Wagholi";
+		System.out.println(a.contains("ag"));
+		System.out.println(a.contains("holi"));
+		
+		//isEmpty() method
+		
+		System.out.println(a.isEmpty());
+		String a1="";
+		String a2="  ";
+		System.out.println(a1.isEmpty());
+		System.out.println(a2.isEmpty());
+		
+		//isBlank() method
+		System.out.println(a.isBlank());
+		System.out.println(a1.isBlank());
+		System.out.println(a2.isBlank());
+		
+		//charAt() method
+		
+		String b="Mock Group 13";
+		System.out.println(b.charAt(3));
+		System.out.println(b.charAt(16));	//Exceeds the index limit
+		
+		//endsWith() method
+		
+		String c="Pune";
+		System.out.println(c.endsWith("e"));
+		System.out.println(c.endsWith("ne"));
+		
+		//StartsWith() method
+		
+		String d="Refridgerator";
+		System.out.println(d.startsWith("R"));
+		System.out.println(d.startsWith("rid", 3));
+		}
+
+}

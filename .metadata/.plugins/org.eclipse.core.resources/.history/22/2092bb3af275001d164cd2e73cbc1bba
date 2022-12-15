@@ -1,0 +1,34 @@
+package nopPOM;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Reporter;
+
+import utility.UtilityNopProp;
+
+public class OrderPage 
+{
+	@FindBy(xpath="//a[text()='Click here for order details.']")private WebElement order;
+	@FindBy(xpath="//a[text()='Log out']")private WebElement logout;
+	
+	public OrderPage(WebDriver driver) 
+	{
+		PageFactory.initElements(driver,this);
+	}
+	public void clickorder(WebDriver driver,String orderno) throws IOException
+	{
+		order.click();
+		Reporter.log("Clicking Order details",true);
+		UtilityNopProp.takescreenshot(driver,orderno);
+	}
+	public void clicklogout()
+	{
+		logout.click();
+		Reporter.log("Clicking logout",true);
+	}
+
+}

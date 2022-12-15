@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;logical.MultiplyWitoutOperator.java&apos; to &apos;RevtheNoUsingStrg.java&apos;&#x0D;&#x0A;- Original project: &apos;Umas_Java&apos;&#x0D;&#x0A;- Original element: &apos;logical.MultiplyWitoutOperator.java&apos;&#x0D;&#x0A;- Renamed element: &apos;logical.RevtheNoUsingStrg.java&apos;" description="Rename compilation unit &apos;MultiplyWitoutOperator.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;logical{MultiplyWitoutOperator.java" name="RevtheNoUsingStrg.java" references="false" stamp="1670853191721" version="1.0"/>
+</session>

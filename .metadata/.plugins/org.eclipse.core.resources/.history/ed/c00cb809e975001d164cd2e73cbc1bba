@@ -1,0 +1,73 @@
+package nopPOM;
+
+import org.testng.annotations.Test;
+
+import base.BaseNOPProp;
+import utility.UtilityNopProp;
+
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+
+import java.io.IOException;
+
+import org.testng.annotations.AfterClass;
+
+public class NOPTestClass extends BaseNOPProp
+{
+	LoginPage login;
+	HomePage home;
+	DataPage data;
+	CartPage cart;
+	CheckoutPage check;
+	
+  @BeforeClass
+  public void beforeClass() throws IOException
+  {
+	  Launchbrowser();
+	  login=new LoginPage(driver);
+	  home=new HomePage(driver);	
+	  data=new DataPage(driver);
+	  cart=new CartPage(driver);
+	  check=new CheckoutPage(driver);
+  }
+	
+	
+  @Test
+  public void f() {
+  }
+  @BeforeMethod
+  public void logintoNOP() throws IOException, InterruptedException
+  {
+	  login.enteremail(UtilityNopProp.readdatafromPropfile("id"));
+	  login.enterpswd(UtilityNopProp.readdatafromPropfile("pwd"));
+	  login.clicksubmit();
+	  
+	  home.sendkey(UtilityNopProp.readdatafromPropfile("search"));
+	  home.clicksearchbutton();
+	  Thread.sleep(1000);
+	  home.clickelement(driver);
+	  
+	  data.clickcart();
+	  data.clickshopcart();
+	  
+	  cart.clickcheckout();
+	  
+	  check.clickBillcontinue();
+	  check.clickshipmthdcontinue();
+	  check.paymentmthd();
+	  check.cardinfo("name","mastercard","code");
+	  
+  }
+
+  @AfterMethod
+  public void afterMethod() {
+  }
+
+  
+
+  @AfterClass
+  public void afterClass() {
+  }
+
+}

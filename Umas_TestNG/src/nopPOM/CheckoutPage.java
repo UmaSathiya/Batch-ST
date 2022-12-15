@@ -1,0 +1,75 @@
+package nopPOM;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Reporter;
+
+public class CheckoutPage 
+{
+	@FindBy(xpath="(//button[@type='button'])[5]")private WebElement billaddrs;
+	@FindBy(xpath="(//button[@type='button'])[7]")private WebElement shipmthd;
+	@FindBy(xpath="(//button[@type='button'])[8]")private WebElement paymthd;
+	@FindBy(id="paymentmethod_1")private WebElement creditcard;
+	@FindBy(id="CreditCardType")private WebElement carddropdown;
+	@FindBy(id="CardholderName")private WebElement cardname;
+	@FindBy(id="CardNumber")private WebElement cardno;
+	@FindBy(id="ExpireMonth")private WebElement expmonth;
+	@FindBy(id="ExpireYear")private WebElement expyr;
+	@FindBy(id="CardCode")private WebElement cardcode;
+	@FindBy(xpath="(//button[@type='button'])[9]")private WebElement carddetails;
+	@FindBy(xpath="(//button[@type='button'])[10]")private WebElement confirm;
+	
+	public CheckoutPage(WebDriver driver)
+	{
+		PageFactory.initElements(driver,this);
+	}
+	public void clickBillcontinue()
+	{
+		billaddrs.click();
+		Reporter.log("Clicking Continue on Billing Address", true);
+	}
+	public void clickshipmthdcontinue()
+	{
+		shipmthd.click();
+		Reporter.log("Clicking Continue on Shipping Method", true);
+	}
+	public void paymentmthd()
+	{
+		creditcard.click();
+		Reporter.log("Select Creditcard optionin Payment Method", true);
+		paymthd.click();
+		Reporter.log("Clicking Continue on Payment Method", true);
+	}
+	public void cardinfo(String name,String code,String num)
+	{
+		Select s = new Select(carddropdown);
+		s.selectByVisibleText("Master card");
+		Reporter.log("Selecting Card type", true);
+		
+		cardname.sendKeys(name);
+		Reporter.log("Sending Cardholder Name", true);
+		cardno.sendKeys(num);
+		Reporter.log("Sending Card number", true);
+		
+		Select s1 = new Select(expmonth);
+		s1.selectByValue("10");
+		Reporter.log("Selecting Expiry Month", true);
+		
+		Select s2 = new Select(expyr);
+		s2.selectByValue("2024");
+		Reporter.log("Selecting Expiry Year", true);
+		
+		cardcode.sendKeys(code);
+		Reporter.log("Sending Card code", true);
+		carddetails.click();
+		Reporter.log("Clicking Continue on Card Information", true);
+	}
+	public void clickconfirm()
+	{
+		confirm.click();
+	}
+
+}

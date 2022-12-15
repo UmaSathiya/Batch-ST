@@ -1,0 +1,82 @@
+package nopPOM;
+
+import org.testng.annotations.Test;
+
+import base.BaseNOPProp;
+import utility.UtilityNopProp;
+
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+
+import java.io.IOException;
+
+import org.testng.Assert;
+import org.testng.Reporter;
+import org.testng.annotations.AfterClass;
+
+public class NOPTestClass extends BaseNOPProp
+{
+	LoginPage login;
+	HomePage home;
+	DataPage data;
+	CartPage cart;
+	CheckoutPage check;
+	OrderPage order;
+	
+  @BeforeClass
+  public void beforeClass() throws IOException
+  {
+	  Launchbrowser();
+	  login=new LoginPage(driver);
+	  home=new HomePage(driver);	
+	  data=new DataPage(driver);
+	  cart=new CartPage(driver);
+	  check=new CheckoutPage(driver);
+	  order=new OrderPage(driver);
+  }
+  @Test
+  public void orders() throws IOException
+  {
+	  
+	  Assert.assertNotNull(order.orderamount(driver),"TC Failed");
+  }
+  @BeforeMethod
+  public void logintoNOP() throws IOException, InterruptedException
+  {
+	  login.enteremail(UtilityNopProp.readdatafromPropfile("id"));
+	  login.enterpswd(UtilityNopProp.readdatafromPropfile("pwd"));
+	  login.clicksubmit();
+	  
+	  home.sendkey(UtilityNopProp.readdatafromPropfile("search"));
+	  home.clicksearchbutton();
+//	  Thread.sleep(2000);
+	  home.clickelement(driver);
+	  
+	  data.clickcart();
+	  data.clickshopcart();
+	  
+	  cart.clickcheckout();
+	  
+	  check.clickBillcontinue();
+	  check.clickshipmthdcontinue();
+	  check.paymentmthd();
+	  check.cardinfo(UtilityNopProp.readdatafromPropfile("name"),UtilityNopProp.readdatafromPropfile("code"),UtilityNopProp.readdatafromPropfile("mastercard"));
+	  check.clickconfirm();
+
+	  order.clickorder();
+  }
+
+  @AfterMethod
+  public void afterMethod() 
+  {
+	  order.clicklogout();
+  }
+  @AfterClass
+  public void afterClass()
+  {
+	  driver.close();
+	  Reporter.log("Closing the Browser",true);
+  }
+
+}

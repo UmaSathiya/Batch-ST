@@ -1,0 +1,15 @@
+package constructor;
+
+public class Constmain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Constmain c1=new Constmain();
+	}
+	
+	public Constmain()
+	{
+		System.out.println("I am Constructor");
+	}
+
+}

@@ -1,0 +1,44 @@
+package nopPOM;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Reporter;
+
+import utility.UtilityNopProp;
+
+public class HomePage 
+{
+	@FindBy(id="small-searchterms")private WebElement searchtab;
+	@FindBy(xpath="//button[@type='submit']")private WebElement clicksearch;
+	@FindBy(xpath="(//a[text()='Apple MacBook Pro 13-inch'])")private WebElement element;
+	@FindBy(xpath="(//button[@type='button'])[2]")private WebElement button;
+	
+	public HomePage(WebDriver driver)
+	{
+		PageFactory.initElements(driver,this);
+	}
+	public void sendkey(String value)
+	{
+		searchtab.sendKeys(value);
+		Reporter.log("Sending Data to Search Tab",true);
+	}
+	public void clicksearchbutton() throws InterruptedException
+	{
+		clicksearch.click();
+		Reporter.log("Clicking Search button",true);
+//		Thread.sleep(1000);
+	}
+	public void clickelement(WebDriver driver) throws InterruptedException
+	{
+		UtilityNopProp.wait(driver, 1000);
+		UtilityNopProp.scrolling(driver, element);
+		Reporter.log("Scroll into view",true);
+		UtilityNopProp.wait(driver, 1000);
+//		Thread.sleep(1000);
+		button.click();
+		Reporter.log("Clicking the Element",true);
+	}
+
+}

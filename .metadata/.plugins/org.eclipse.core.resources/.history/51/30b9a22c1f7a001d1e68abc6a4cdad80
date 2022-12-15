@@ -1,0 +1,15 @@
+package stringBuffer;
+
+public class StringBufferUse 
+{
+	public static void main(String[] args) 
+	{
+		StringBuffer s = new StringBuffer("Chennai");
+		
+		s.append(true);
+		s.capacity();
+		System.out.println(s);
+
+	}
+
+}

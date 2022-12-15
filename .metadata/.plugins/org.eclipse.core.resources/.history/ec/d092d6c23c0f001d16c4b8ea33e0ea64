@@ -1,0 +1,39 @@
+package assignments;
+
+public class Pune_university {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Pune_university info=new Pune_university();
+		info.studentinfo();
+		
+		studentinfo1();
+	}
+	public void studentinfo()
+	{
+		String Name="UMA";
+		char Gender='F';
+		float Age=28.6f;
+		String Degree="B.E(ECE)";
+		
+		System.out.println("My Name is "+Name);
+		System.out.println("My Gender is "+Gender);
+		System.out.println("My Age is "+Age);
+		System.out.println("My Degree is "+Degree);
+	}
+	public static void studentinfo1()
+	{
+		String Name="UMA";
+		char Gender='F';
+		float Age=28.6f;
+		String Degree="B.E(ECE)";
+		
+		System.out.println("My Name is "+Name);
+		System.out.println("My Gender is "+Gender);
+		System.out.println("My Age is "+Age);
+		System.out.println("My Degree is "+Degree);
+	}
+
+}
+

@@ -1,0 +1,24 @@
+package logical;
+
+import java.util.Scanner;
+
+public class ReverseTheString 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the String");
+		String org=sc.next();
+		String rev="";
+		
+		for(int i=org.length()-1;i>=0;i--)
+		{
+			char t = org.charAt(i);
+			rev=rev+t;
+		}
+		System.out.println("original string is:"+org);
+		System.out.println("reverse string is:"+rev);
+
+	}
+
+}

@@ -1,0 +1,37 @@
+package popUps;
+
+import java.util.Iterator;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ChildBrowserPopUp 
+{
+	public static void main(String[] args) throws InterruptedException 
+	{
+		System.setProperty("webdriver.chrome.driver","D:\\SELENIUM\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		driver.get("https://www.hyrtutorials.com/p/window-handles-practice.html");
+		
+		driver.findElement(By.id("newWindowBtn")).click();
+		
+		Set<String> ids = driver.getWindowHandles();
+		System.out.println(ids);
+		
+		Iterator<String> id = ids.iterator();
+		String mainId = id.next();
+		String childId = id.next();
+		
+		driver.switchTo().window(childId);
+		driver.findElement(By.id("firstName")).sendKeys("Uma");
+		Thread.sleep(500);
+		driver.switchTo().window(mainId);
+		driver.findElement(By.xpath("(//a[text()='Home'])[2]")).click();
+
+	}
+
+}

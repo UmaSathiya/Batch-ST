@@ -1,0 +1,22 @@
+package constructor;
+
+public class Construct {
+	int a;
+	int b;
+	public Construct()
+	{
+		a=20;
+		b=25;
+		
+	}
+	public void addition()
+	{
+		int sum=a+b;
+		System.out.println("a+b="+sum);
+	}
+public static void main()
+{
+	Construct obj=new Construct();
+	obj.addition();
+}
+}

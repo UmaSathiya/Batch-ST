@@ -1,0 +1,24 @@
+package collection;
+
+import java.util.ArrayList;
+
+public class ArraylistusingLoop 
+{
+	public static void main(String[] args) 
+	{
+		ArrayList<Object>al=new ArrayList<>();
+		
+		al.add("Uma");
+		al.add("Sathiya");
+		al.add("Advik");
+		al.add(null);
+		al.add(null);
+		al.add(true);
+		al.add(2145);
+		al.add(null);
+		al.add("Mahesh");
+		al.add("Seelan");
+
+	}
+
+}

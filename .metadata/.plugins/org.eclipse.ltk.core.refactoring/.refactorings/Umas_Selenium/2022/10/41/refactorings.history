@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;screenshot.Sshot&apos; to &apos;Randomstring&apos;&#x0D;&#x0A;- Original project: &apos;Umas_Selenium&apos;&#x0D;&#x0A;- Original element: &apos;screenshot.Sshot&apos;&#x0D;&#x0A;- Renamed element: &apos;screenshot.Randomstring&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Sshot&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;screenshot{Sshot.java[Sshot" matchStrategy="1" name="Randomstring" qualified="false" references="true" similarDeclarations="false" stamp="1665042691308" textual="false" version="1.0"/>
+</session>

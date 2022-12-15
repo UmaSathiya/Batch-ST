@@ -1,0 +1,23 @@
+package logical;
+
+import java.util.Scanner;
+
+public class RevtheNoUsingStrg
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the Value");
+		int orgNo=sc.nextInt();
+		String orgStr = Integer.toString(orgNo);
+		String rev="";
+		for(int i=orgStr.length()-1;i>=0;i--)
+		{
+			char t = orgStr.charAt(i);
+			rev=rev+t;
+		}
+		System.out.println("original string:"+orgStr);
+		System.out.println("Reverse string:"+rev);
+	}
+
+}

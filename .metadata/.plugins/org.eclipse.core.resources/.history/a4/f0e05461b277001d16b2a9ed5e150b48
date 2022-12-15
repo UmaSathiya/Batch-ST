@@ -1,0 +1,22 @@
+package exception;
+
+public class NullpointerExcep
+{
+	public static void main(String[] args)
+	{
+		String a="pune";
+		String b=null;
+		
+		try
+		{
+		//	System.out.println(a.charAt(5));
+			System.out.println(b);
+		}
+		catch(StringIndexOutOfBoundsException e)
+		{
+			System.out.println("check string size");
+		}
+
+	}
+
+}

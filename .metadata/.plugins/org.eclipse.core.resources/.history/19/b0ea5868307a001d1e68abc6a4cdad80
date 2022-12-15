@@ -1,0 +1,17 @@
+package logical;
+
+import java.util.Scanner;
+
+public class RevtheNoUsingStrg
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the Value");
+		int a=sc.nextInt();
+		int sum=1;
+		for(int i)
+
+	}
+
+}

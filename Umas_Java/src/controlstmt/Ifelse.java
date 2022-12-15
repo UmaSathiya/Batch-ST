@@ -1,0 +1,37 @@
+package controlstmt;
+
+public class Ifelse {
+
+	public static void main(String[] args) 
+	{
+		float temp=27.5f;
+		char gender='F';
+		String city="Pune";
+		
+		if(temp>16)
+		{
+			System.out.println("Turn on AC");
+		}
+		else
+		{
+			System.out.println("Turn off AC");
+		}
+		if(gender=='F')
+		{
+			System.out.println("I am Female");
+		}
+		else
+		{
+			System.out.println("I am Male");
+		}
+		if(city=="Pune")
+		{
+			System.out.println("Visit Shanivarwada");
+		}
+		else
+		{
+			System.out.println("U are out of Pune");
+		}
+	}
+
+}

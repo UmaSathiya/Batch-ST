@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="testNGgrouping.UG">
+      <methods>
+      <include name="Ug1styear"/>
+      <include name="Ug3rdyear"/>
+      </methods>
+      </class>
+      <class name="testNGgrouping.School">
+      <methods>
+      <exclude name="class10"/>
+      </methods>
+      </class>
+      <class name="testNGgrouping.PhD">
+      <methods>
+      <include name="Phd1styear"/>
+      </methods>
+      </class>
+      <class name="testNGgrouping.PG">
+      <methods>
+      <exclude name="Pg2ndyear"/>
+      </methods>
+      </class>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

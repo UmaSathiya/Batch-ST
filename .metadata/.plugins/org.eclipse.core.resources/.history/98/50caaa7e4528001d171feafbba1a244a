@@ -1,0 +1,7 @@
+package interfaces;
+
+public interface Intmul2 
+{
+	void ex3();
+	void ex4();
+}
