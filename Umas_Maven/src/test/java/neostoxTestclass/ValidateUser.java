@@ -18,6 +18,9 @@ import neoStoxPOMProp.SignInPage;
 import utility.Utility;
 import utility.UtilityNeoProp;
 
+
+
+
 public class ValidateUser extends BaseNeoProp
 {
 	SignInPage signin;
